@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="640" height="320" style="border:1px solid #c3c3c3;">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script src="Screen.js"></script>
+<script src="Keyboard.js"></script>
+<script src="Chip8.js"></script>
+
+
+<script>
+
+    var cc = new Chip8();
+    cc.reset();
+    cc.loadRom('PONG2');
+    console.log(cc.memory);
+
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    cc.start(ctx);
+
+</script>
+</body>
+</html>
